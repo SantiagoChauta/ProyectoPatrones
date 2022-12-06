@@ -5,14 +5,14 @@ public class Pedido {
 	private String cliente_id;
 	private String producto;
 	private float precio;
+
 	
 	public Pedido() {
 		
 	}
 	
-	public Pedido(int id, String producto, float precio) {
-		super();
-		this.id = id;
+	public Pedido( String cliente_id,String producto, float precio) {
+		this.cliente_id=cliente_id;
 		this.producto = producto;
 		this.precio = precio;
 	}

@@ -2,4 +2,4 @@ Manifest-Version: 1.0
 
 Name: COMPONENTE
 nombre: com.cableado.IUsuario
-clase: com.cliente.Cliente
+clase: com.cliente.ComponenteCliente

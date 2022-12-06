@@ -114,14 +114,11 @@ public class ClienteDAOImp implements ClienteDAO{
 	public List<Pedido> listarPedidos(String id) {
 		List<Pedido> lista = new ArrayList<>();
 		String sql = "select * from pedido where cliente_id =" +id;
-		
 		try {
 			con = c.conectar();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			
 			while(rs.next()) {
-				System.out.println("entra");
 				Pedido p = new Pedido();
 				p.setId(rs.getInt(1));
 				p.setCliente_id(rs.getString(2));
@@ -131,7 +128,7 @@ public class ClienteDAOImp implements ClienteDAO{
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error buscando productos");
 		}
 		return lista;
 	}
