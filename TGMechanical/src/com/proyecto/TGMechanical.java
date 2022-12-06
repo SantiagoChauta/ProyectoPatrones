@@ -21,8 +21,9 @@ public class TGMechanical implements ITheGreatMechanical {
 		Class cls = null;
 		Class cls2 = null;
 		
-		Cargador2 crgFront = new Cargador2("C:/Users/Usuario/eclipse-workspace/TGMechanical/front");
-		Cargador2 crgBack = new Cargador2("C:/Users/Usuario/eclipse-workspace/TGMechanical/back");
+		Cargador2 crgFront = new Cargador2("../ProyectoPatrones/TGMechanical/front");
+		Cargador2 crgBack = new Cargador2(
+				"../ProyectoPatrones/TGMechanical/back");
 		cls  = crgBack.getClase(IRecaudo.class.getName());
 		cls2 = crgFront.getClase(ISesion.class.getName());
 

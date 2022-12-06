@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Usuario/eclipse-workspace/TGMechanical/API/api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/usuario/OneDrive/Documentos/Semestre 2022-3/Patrones/Final/ProyectoPatrones/TGMechanical/API/api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
