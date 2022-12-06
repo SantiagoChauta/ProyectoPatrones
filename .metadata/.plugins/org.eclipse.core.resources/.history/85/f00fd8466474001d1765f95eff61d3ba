@@ -1,0 +1,7 @@
+package com.formulario;
+
+public interface ISesion {
+	void iniciarSesion();
+	void registrarse();
+	
+}

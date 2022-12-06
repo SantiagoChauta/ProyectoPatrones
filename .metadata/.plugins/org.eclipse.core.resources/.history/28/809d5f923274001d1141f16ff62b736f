@@ -1,0 +1,18 @@
+package com.pagos;
+
+import com.cableado.IRecaudo;
+
+public class RealizarCompra implements IRecaudo{
+
+	private Pagos pago;
+	@Override
+	
+	
+	public void realizarPago() {
+		
+		
+	}
+	
+	
+
+}

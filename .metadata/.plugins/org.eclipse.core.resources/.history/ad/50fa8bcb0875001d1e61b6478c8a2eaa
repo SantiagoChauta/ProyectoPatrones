@@ -1,0 +1,24 @@
+package com.cliente;
+
+import java.util.List;
+
+import com.cliente.Tablas.Cliente;
+import com.cliente.Tablas.Pedido;
+import com.cliente.implementaciones.ClienteDAOImp;
+import com.cliente.implementaciones.PedidoDAOImp;
+
+public class demo {
+	public static void main(String[] args) {
+		 
+		ClienteDAOImp em = new ClienteDAOImp();
+		PedidoDAOImp pDAO = new PedidoDAOImp();
+		
+		Pedido Pa = pDAO.findById(8);
+		Pa.setProducto("Helados");
+		pDAO.actualizar(Pa);
+		Pedido p = pDAO.findById(8);
+		System.out.println(p.toString());
+		
+		pDAO.save(new Pedido("1111","Mayonesa",1540.65f));
+	}
+}

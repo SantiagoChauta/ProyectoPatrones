@@ -1,0 +1,17 @@
+package com.cliente;
+
+import com.cliente.Tablas.Cliente;
+import com.cliente.implementaciones.ClienteDAOImp;
+
+public class demo {
+	public static void main(String[] args) {
+		 
+		ClienteDAOImp em = new ClienteDAOImp();
+		
+		Long a = ln1111;
+		
+		Cliente cl = em.findById();
+		
+		
+	}
+}

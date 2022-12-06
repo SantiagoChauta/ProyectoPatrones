@@ -1,0 +1,14 @@
+package com.cliente.DAO;
+
+import com.cliente.Tablas.Cliente;
+
+public interface ClienteDAO  {
+	
+	public Cliente findById(String id);
+	public boolean actualizar(Cliente cliente);
+	public boolean save(Cliente cliente);
+	public boolean remove(String id);
+
+	
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.moreunit.wizards.NewTestCaseWizard.packageFragmentRoot.Proyecto1" value="=Proyecto1/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/"/>
+	<item key="NewTestCaseCreationWizardPage.USE_SETUP" value="true"/>
+	<item key="NewTestCaseCreationWizardPage.USE_TEARDOWN" value="false"/>
+	<item key="NewTestCaseCreationWizardPage.USE_SETUPCLASS" value="false"/>
+	<item key="NewTestCaseCreationWizardPage.USE_TEARDOWNCLASS" value="false"/>
+	<item key="NewTestCaseCreationWizardPage.USE_CONSTRUCTOR" value="false"/>
+</section>

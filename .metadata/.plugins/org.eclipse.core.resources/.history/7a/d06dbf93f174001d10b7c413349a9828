@@ -1,0 +1,61 @@
+package com.cliente.Tablas;
+
+public class Pedido {
+	private int id;
+	private String cliente_id;
+	private String producto;
+	private float precio;
+	private int cantidad;
+	
+	public Pedido() {
+		
+	}
+	
+	public Pedido(int id, String producto, String precio, String cantidad) {
+		super();
+		this.id = id;
+		this.producto = producto;
+		this.precio = precio;
+		this.cantidad = cantidad;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public String getCliente_id() {
+		return cliente_id;
+	}
+
+	public void setCliente_id(String cliente_id) {
+		this.cliente_id = cliente_id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getClienteId() {
+		return cliente_id;
+	}
+	public String getProducto() {
+		return producto;
+	}
+	public void setProducto(String producto) {
+		this.producto = producto;
+	}
+	public String getPrecio() {
+		return precio;
+	}
+	public void setPrecio(String precio) {
+		this.precio = precio;
+	}
+	public String getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(String cantidad) {
+		this.cantidad = cantidad;
+	}
+	
+	
+	
+}

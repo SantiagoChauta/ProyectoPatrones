@@ -1,0 +1,70 @@
+package com.cliente.implementaciones;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.JOptionPane;
+
+import com.cliente.DAO.ClienteDAO;
+import com.cliente.Tablas.Cliente;
+import com.cliente.conexion.Conexion;
+
+public class ClienteDAOImp implements ClienteDAO{
+	PreparedStatement ps;
+    ResultSet rs;
+    Conexion c = new Conexion();
+    Connection con;
+	
+    @Override
+	public Cliente findById(String cedula) {
+    	String sql ="select * from cliente where cedula =" + cedula;
+        Cliente em = new Cliente();
+        try {
+            con = c.conectar();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                em.setCedula(cedula);
+                em.setNombre(rs.getString(2));
+                em.setApellido(rs.getString(3));
+                em.setCorreo(rs.getString(4));
+                em.setPassword(rs.getString(5));
+            }else {
+            	JOptionPane.showMessageDialog(null, "El usuario no existe");
+            }
+            
+        } catch (Exception e) {
+        	
+        }
+        return em;
+	}
+	@Override
+	public boolean actualizar(Cliente cliente) {
+		String sql ="update empleado set nombre=? , apellido=?,telefono=?,correo=?, pass=? where cedula = ? ";
+        Cliente em = new Cliente();
+        try {
+            con = c.conectar();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if(rs.next()){
+                
+                em.setNombre(rs.getString(2));
+                em.setApellido(rs.getString(3));
+                em.setCorreo(rs.getString(4));
+                em.setPassword(rs.getString(5));
+            }else {
+            	JOptionPane.showMessageDialog(null, "El usuario no existe");
+            }
+            
+        } catch (Exception e) {
+        	
+        }
+        
+	}
+	@Override
+	public boolean save() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

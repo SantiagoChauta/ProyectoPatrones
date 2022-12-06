@@ -1,0 +1,24 @@
+package com.formulario;
+
+import javax.swing.JTextField;
+
+import com.formulario.componentes.Componente;
+
+public class Nombre extends JTextField implements Componente{
+
+	private Formulario form;
+	
+	@Override
+	public void setMediador(Formulario form) {
+		this.form=form;
+		
+	}
+
+	@Override
+	public String getname() {
+		return "Nombre";
+	}
+
+	
+
+}

@@ -1,0 +1,8 @@
+package com.cableado;
+
+public interface IComunidad {
+	void publicarOpinion();
+	void borrarOpinion();
+	void editarOpinion();
+	void cargarOpiniones();
+}

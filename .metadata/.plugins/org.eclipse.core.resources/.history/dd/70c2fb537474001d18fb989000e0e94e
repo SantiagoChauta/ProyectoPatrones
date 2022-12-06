@@ -1,0 +1,47 @@
+package com.proyecto;
+
+import java.util.Scanner;
+
+import com.cableado.IRecaudo;
+import com.cableado.ISesion;
+import com.cableado.ITheGreatMechanical;
+import com.utilidades.Cargador;
+
+public class TGMechanical implements ITheGreatMechanical {
+
+	public static void main(String[] args) {
+		new TGMechanical().orquestarComponentes();
+	}
+
+	@Override
+	public void orquestarComponentes() {
+
+		Class cls = null;
+		Class cls2 = null;
+		
+		final Cargador crgFront = new Cargador("front");
+		cls = crgFront.getClase(IRecaudo.class.getName());
+		cls2= crgFront.getClase(ISesion.class.getName());
+		System.out.println("seleccion nequi 1, efecty 2, tarjeta 3");
+		Scanner sc = new Scanner(System.in);
+		int opcion = sc.nextInt();
+		try {
+
+			final IRecaudo ie = (IRecaudo) cls.newInstance();
+			ie.realizarPago(opcion, 500000);
+		} catch (Exception exc) {
+			System.out.println("No hay pagos");
+			;
+		}
+		;
+		try {
+			final ISesion form = (ISesion) cls2.newInstance();
+			System.out.print("Si entra");
+		} catch (Exception e) {
+			System.out.println("No hay Formulario");
+			;
+		}
+
+	}
+
+}

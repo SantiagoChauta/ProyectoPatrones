@@ -1,0 +1,6 @@
+package com.cableado;
+
+public interface ISesion {
+	void iniciarSesion();
+	void Registrarse();
+}

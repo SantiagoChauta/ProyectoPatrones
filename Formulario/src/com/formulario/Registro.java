@@ -10,7 +10,7 @@ import javax.swing.WindowConstants;
 
 import com.cableado.ISesion;
 import com.cableado.IUsuario;
-import com.cliente.Cliente;
+import com.cliente.Tablas.Cliente;
 import com.formulario.componentes.Apellido;
 import com.formulario.componentes.Cedula;
 import com.formulario.componentes.Componente;
@@ -28,13 +28,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+
 public class Registro implements ISesion,Formulario {
 	
 	public static void main(String [] args) {
 		new Registro();
 	}
 	
-	private Cliente cliente;
 	private Titulo titulo;
 	private Nombre nombre;
 	private Apellido apellido;
@@ -44,6 +44,7 @@ public class Registro implements ISesion,Formulario {
 	private Registrarse bregistrarse;
 	private IniciarSesion biniciar_sesion;
 	private GuardarDatos bguardar_datos;
+	private String[] datos;
 	
 	JFrame ventana = new JFrame("Formulario");
 	
@@ -102,35 +103,64 @@ public class Registro implements ISesion,Formulario {
 
 	@Override
 	public void ocultarElementos(boolean flag,String title) {
-		ventana.setSize(300,440);
 		ventana.setVisible(false);
-		ventana.setLocationRelativeTo(null);
-		
 		titulo.setText(title);
-		titulo.setBounds(100, 30, 150, 35);;
-		lNombre.setVisible(!flag);
-		nombre.setVisible(!flag);
-		lApellido.setVisible(!flag);
-		apellido.setVisible(!flag);
-		lCorreo.setBounds(50,170,60,20);
-		correo.setBounds(50, 193, 190, 20);
-		lPassword.setBounds(50,270,80,20);
-		password.setBounds(50,293,190,20);
-		lCedula.setVisible(!flag);
-		cedula.setVisible(!flag);
-		biniciar_sesion.setVisible(flag);
-		bregistrarse.setVisible(flag);
-		ventana.setVisible(true);
+		if(!flag) {
+			ventana.setSize(300,440);
+			
+			ventana.setLocationRelativeTo(null);
+			
+			titulo.setBounds(100, 30, 150, 35);;
+			lNombre.setVisible(!flag);
+			nombre.setVisible(!flag);
+			lApellido.setVisible(!flag);
+			apellido.setVisible(!flag);
+			lCorreo.setVisible(!flag);
+			correo.setVisible(!flag);
+			lPassword.setBounds(50,270,80,20);
+			password.setBounds(50,293,190,20);
+			lCedula.setBounds(50,170,80,20);
+			cedula.setBounds(50,193,190,20);
+			biniciar_sesion.setVisible(flag);
+			bregistrarse.setVisible(flag);
+			ventana.setVisible(true);
+			bguardar_datos.setVisible(!flag);
+		}
+		else {
+			ventana.setSize(300, 300);
+			ventana.setLocationRelativeTo(null);
+			
+			titulo.setBounds(75, 30, 150, 35);
+			lNombre.setVisible(!flag);
+			nombre.setVisible(!flag);
+			lApellido.setVisible(!flag);
+			apellido.setVisible(!flag);
+			lCorreo.setVisible(!flag);
+			correo.setVisible(!flag);
+			lCedula.setBounds(50,70,60,20);
+			cedula.setBounds(50, 93, 190, 20);
+			lPassword.setBounds(50,120,80,20);
+			password.setBounds(50,143,190,20);
+			biniciar_sesion.setVisible(flag);
+			bregistrarse.setVisible(flag);
+			bguardar_datos.setVisible(!flag);
+			ventana.setVisible(true);
+		}
 	}
 
 
 	@Override
 	public void ingresar() {
-		String email = correo.getText();
+		String ced = cedula.getText();
 		String pass = password.getText();
-		iniciarSesion(email,pass);
+		String[] d = {ced,pass};
+		if(ced.isBlank() || pass.isBlank()) {
+			JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
+		}else {
+			datos = d;
+		}
 	}
-
+	
 	@Override
 	public void registrar() {
 		String name = nombre.getText();
@@ -138,27 +168,12 @@ public class Registro implements ISesion,Formulario {
 		String email = correo.getText();
 		String id = cedula.getText();
 		String pass = password.getText();
-		registrarse(name,last_name,email,id,pass);
-	}
-
-	@Override
-	public void iniciarSesion(String arg0, String arg1) {
-		Cargador crgBack = new Cargador("C:/Users/Usuario/eclipse-workspace/TGMechanical/back");
-		Class cls = crgBack.getClase(IUsuario.class.getName());
-		try {
-			IUsuario ie = (IUsuario) cls.newInstance();
-			ie.consultarDatosCliente();
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null,"No existe el componente Cliente");
+		String[] d = {name,last_name,email,id,pass};
+		if(name.isBlank() || last_name.isBlank() || email.isBlank() || id.isBlank() || pass.isBlank()) {
+			JOptionPane.showMessageDialog(null, "Ingrese todos los campos");
+		}else {
+			datos = d;
 		}
-		
-		
-	}
-
-	@Override
-	public void registrarse( String nombre, String apellido, String correo, String cedula, String password) {
-		System.out.println("Registrandonos mamu...");
-		System.out.println("Nombre: "+nombre+"\nApellido: "+apellido+"\nCorreo: "+correo +"\nCedula: "+cedula+"\nPassword: "+password);
 	}
 	
 	
@@ -194,15 +209,15 @@ public class Registro implements ISesion,Formulario {
 		
 		//Componente Correo 
 		lCorreo.setFont(fuenteLabels);
-		lCorreo.setBounds(50,70,60,20);
-		correo.setBounds(50, 93, 190, 20);
+		lCorreo.setBounds(50,220,80,20);
+		correo.setBounds(50,243,190,20);
+		lCorreo.setVisible(false);
+		correo.setVisible(false);
 		
 		//Componente Cedula
 		lCedula.setFont(fuenteLabels);
-		lCedula.setBounds(50,220,80,20);
-		lCedula.setVisible(false);
-		cedula.setBounds(50,243,190,20);
-		cedula.setVisible(false);
+		lCedula.setBounds(50,70,60,20);
+		cedula.setBounds(50, 93, 190, 20);
 		
 		//Componente Password
 		lPassword.setFont(fuenteLabels);
@@ -239,6 +254,10 @@ public class Registro implements ISesion,Formulario {
 		
 	}
 
+	@Override
+	public String[] regresarFormulario() {
+		return datos;
+	}
 	
 
 }

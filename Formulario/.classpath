@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Usuario/eclipse-workspace/TGMechanical/API/api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Usuario/eclipse-workspace/TGMechanical/back/Cliente.jar"/>
+	<classpathentry kind="lib" path="C:/LibreriasJava/ojdbc8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

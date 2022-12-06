@@ -1,0 +1,20 @@
+package com.formulario;
+
+import javax.swing.JButton;
+
+public class Registrarse extends JButton implements Componente{
+
+	@Override
+	public void setMediador(Formulario form) {
+		super("Registrarse");
+		
+	}
+
+	@Override
+	public String getname() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

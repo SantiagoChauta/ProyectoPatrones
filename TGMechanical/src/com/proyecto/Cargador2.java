@@ -94,7 +94,7 @@ public class Cargador2 {
                 //los trim aplicados de una vez sin preguntar son los caracteristicas que como minimo tiene un compoennet
                 nc   = atributos.getValue(NOMBRE_DEL_COMPONENTE).trim();
                 ncbc = atributos.getValue(CLASE_BASE_DEL_COMPONENTE).trim();
-                //System.out.println(nc +"\n"+ncbc);
+                System.out.println(nc +"\n"+ncbc);
                 ////////////////////////////////////////////////////////////
                 InfoComponente ip=new InfoComponente(nc,ncbc); 
                 urls.add(files[i].toURI().toURL());                                                                

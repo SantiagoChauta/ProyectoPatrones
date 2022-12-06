@@ -1,0 +1,9 @@
+package com.pagos;
+
+public class Efecty implements Pagos {
+	@Override
+	public void realizarPago() {
+		System.out.println("Pago con Efecty");
+	}
+
+}

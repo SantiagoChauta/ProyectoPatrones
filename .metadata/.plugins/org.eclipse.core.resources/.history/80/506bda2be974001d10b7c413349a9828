@@ -1,0 +1,5 @@
+package com.cliente.conexion;
+
+public class Conexion {
+
+}

@@ -1,0 +1,24 @@
+package com.formulario;
+
+import com.formulario.componentes.Apellido;
+import com.formulario.componentes.Cedula;
+import com.formulario.componentes.Correo;
+import com.formulario.componentes.Nombre;
+import com.formulario.componentes.Password;
+import com.formulario.componentes.Titulo;
+
+public class demo {
+	
+	
+	public static void main(String[] args) {
+		Formulario form = new Registro();
+		form.registrarComponente(new Titulo());
+		form.registrarComponente(new Nombre());
+		form.registrarComponente(new Apellido());
+		form.registrarComponente(new Correo());
+		form.registrarComponente(new Cedula());
+		form.registrarComponente(new Password());
+		
+		form.
+	}
+}

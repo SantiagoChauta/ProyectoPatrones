@@ -1,0 +1,23 @@
+package com.cliente;
+
+import java.util.List;
+
+import com.cliente.Tablas.Cliente;
+import com.cliente.Tablas.Pedido;
+import com.cliente.implementaciones.ClienteDAOImp;
+import com.cliente.implementaciones.PedidoDAOImp;
+
+public class demo {
+	public static void main(String[] args) {
+		 
+		ClienteDAOImp em = new ClienteDAOImp();
+		PedidoDAOImp pDAO = new PedidoDAOImp();
+		
+		Cliente cl = em.findById("3333");
+		List<Pedido> lista = pDAO.listar();
+	    Cliente cl2 = new Cliente("1111", "felipe", "Antonio", "1adf", "4568");
+	    System.out.println(em.actualizar(cl2););
+		System.out.println(cl2.toString());
+		
+	}
+}

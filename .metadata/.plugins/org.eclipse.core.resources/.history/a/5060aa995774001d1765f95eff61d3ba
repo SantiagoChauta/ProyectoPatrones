@@ -1,0 +1,8 @@
+package com.formulario;
+
+import com.formulario.Formulario;
+
+public interface Componente {
+	void setMediador(Formulario form);
+	String getname();
+}

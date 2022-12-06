@@ -21,13 +21,12 @@ public class TGMechanical implements ITheGreatMechanical {
 		Class cls = null;
 		Class cls2 = null;
 		
-		Cargador2 crgFront = new Cargador2("C:/Users/Usuario/eclipse-workspace/TGMechanical/front");
-		Cargador2 crgBack = new Cargador2("C:/Users/Usuario/eclipse-workspace/TGMechanical/back");
+		Cargador crgFront = new Cargador("C:/Users/Usuario/eclipse-workspace/TGMechanical/front");
+		Cargador crgBack = new Cargador("C:/Users/Usuario/eclipse-workspace/TGMechanical/back");
 		cls  = crgBack.getClase(IRecaudo.class.getName());
 		cls2 = crgFront.getClase(ISesion.class.getName());
-
+		String forma[];
 		try {
-
 			final IRecaudo ie = (IRecaudo) cls.newInstance();
 			ie.realizarPago(1,520000);
 		} catch (Exception exc) {
@@ -37,6 +36,7 @@ public class TGMechanical implements ITheGreatMechanical {
 		
 		try {
 			ISesion form = (ISesion) cls2.newInstance();
+			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "No existe el componente Formulario");
 			

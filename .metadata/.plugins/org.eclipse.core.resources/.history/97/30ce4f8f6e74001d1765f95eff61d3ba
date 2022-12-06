@@ -1,0 +1,6 @@
+package com.cableado;
+
+public interface ISesion {
+	void iniciarSesion(String correo,String password);
+	void registrarse(String nombre, String apellido, String correo,String cedula, String password);
+}
