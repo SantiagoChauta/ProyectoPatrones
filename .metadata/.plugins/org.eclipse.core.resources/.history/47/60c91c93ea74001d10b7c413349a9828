@@ -1,9 +1,0 @@
-package com.cliente.DAO;
-
-import com.cliente.Objetos.Pedido;
-
-public interface PedidoDAO {
-	public Pedido findById();
-	public boolean actualizar(Pedido pedido);
-	public boolean save();
-}

@@ -1,9 +1,0 @@
-package com.formulario;
-
-public interface Formulario {
-
-	void iniciarSesion();
-	void registrarse();
-	void registrarComponente();
-	
-}

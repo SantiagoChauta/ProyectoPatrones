@@ -1,6 +1,0 @@
-package com.formulario;
-
-public interface Componente {
-	void setMediador(Formulario form);
-	String getname();
-}

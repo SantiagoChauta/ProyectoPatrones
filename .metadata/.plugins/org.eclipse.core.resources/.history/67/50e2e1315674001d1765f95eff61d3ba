@@ -1,7 +1,0 @@
-package com.formulario;
-
-public interface Formulario {
-
-	void registrarComponente();
-	void ocultarElementos();
-}

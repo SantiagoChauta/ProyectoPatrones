@@ -1,5 +1,0 @@
-package com.cableado;
-
-public interface IPerfil {
-
-}

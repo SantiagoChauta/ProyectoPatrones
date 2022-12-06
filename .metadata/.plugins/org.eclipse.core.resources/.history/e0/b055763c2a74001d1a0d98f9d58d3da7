@@ -1,7 +1,0 @@
-package com.cableado;
-
-public class ITheGreatMechanical {
-	
-	void orquestarComponentes();
-	
-}

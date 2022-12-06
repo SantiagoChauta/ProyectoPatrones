@@ -6,6 +6,5 @@ public interface PedidoDAO {
 	
 	public Pedido findById(int id);
 	public boolean actualizar(Pedido pedido);
-	public boolean save(Pedido pedido);
-	public boolean remove(int id);
+	public boolean save();
 }

@@ -1,7 +1,0 @@
-package com.formulario;
-
-public interface Formulario implements ISesion {
-
-	void registrarComponente();
-	void ocultarElementos();
-}
